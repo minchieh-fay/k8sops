@@ -111,3 +111,10 @@ dist
 
 # TernJS port file
 .tern-port
+
+# tmp
+1.txt
+tmp
+
+# runtime session data
+data/session/

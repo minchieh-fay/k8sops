@@ -1,0 +1,20 @@
+{
+  "name": "k8sops",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "start": "bun src/index.ts",
+    "check": "bunx tsc --noEmit"
+  },
+  "dependencies": {
+    "@openai/codex-sdk": "^0.142.4",
+    "dotenv": "^16.6.1",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.15",
+    "@types/js-yaml": "^4.0.9",
+    "typescript": "^5.9.2"
+  }
+}
