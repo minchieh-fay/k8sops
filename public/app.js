@@ -167,7 +167,7 @@ function renderCurrentSession() {
   submitBtnEl.disabled = meta.status === "running" || !meta.hasKubeconfig;
   submitNoteEl.textContent =
     meta.status === "running"
-      ? "Codex 正在执行，当前会话暂时不能重复提交。"
+      ? "智能助手正在执行，当前会话暂时不能重复提交。"
       : meta.hasKubeconfig
         ? "当前会话已绑定 kubeconfig，可直接继续追问。"
         : "当前会话缺少 kubeconfig。";
@@ -293,7 +293,7 @@ async function submitPrompt() {
   promptInputEl.value = "";
   imageInputEl.value = "";
   imagePreviewEl.innerHTML = "";
-  submitNoteEl.textContent = `已提交第 ${payload.turnId} 轮，等待 Codex 返回。`;
+  submitNoteEl.textContent = `已提交第 ${payload.turnId} 轮，等待智能助手返回。`;
   await refreshCurrentSession();
 }
 

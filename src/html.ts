@@ -51,7 +51,7 @@ export function renderPage(): string {
             <div class="card-head">
               <div>
                 <h3>绑定集群配置</h3>
-                <p class="muted">创建完成后会直接进入用户与 Codex 的交互界面。</p>
+                <p class="muted">创建完成后会直接进入用户与智能助手的交互界面。</p>
               </div>
               <button
                 type="button"
@@ -75,7 +75,7 @@ export function renderPage(): string {
       <section id="chat-view" class="chat-view">
         <section class="hero card">
           <div>
-            <p class="eyebrow">Codex + kubectl</p>
+            <p class="eyebrow">AI 运维助手</p>
             <h2 id="session-title">加载中</h2>
             <p id="session-meta" class="muted"></p>
           </div>
@@ -104,7 +104,7 @@ export function renderPage(): string {
           </div>
           <div class="action-row">
             <span id="submit-note" class="muted"></span>
-            <button id="submit-btn" class="primary-btn">提交给 Codex</button>
+            <button id="submit-btn" class="primary-btn">提交给智能助手</button>
           </div>
         </section>
 
