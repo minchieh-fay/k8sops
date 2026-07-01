@@ -114,7 +114,12 @@ dist
 
 # tmp
 1.txt
+2.txt
+Dockerfile.my
 tmp
 
 # runtime session data
 data/session/
+
+# NAS metadata directories
+@eaDir/
