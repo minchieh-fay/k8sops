@@ -116,6 +116,7 @@ dist
 1.txt
 2.txt
 Dockerfile.my
+docker-compose.yml
 tmp
 
 # runtime session data
@@ -123,3 +124,4 @@ data/session/
 
 # NAS metadata directories
 @eaDir/
+._*
