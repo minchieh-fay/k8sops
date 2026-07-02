@@ -114,7 +114,7 @@ export class CodexRunner {
         : codex.startThread(threadOptions);
 
       const input = [
-        { type: "text" as const, text: turn.prompt },
+        { type: "text" as const, text: buildKubernetesScopedPrompt(turn.prompt) },
         ...turn.images.map((fileName) => ({
           type: "local_image" as const,
           path: path.join(this.store.getSessionDir(sessionId), fileName)
@@ -225,6 +225,18 @@ export class CodexRunner {
       PATH: `${sessionBin}:${existingPath}`
     } as Record<string, string>;
   }
+}
+
+function buildKubernetesScopedPrompt(prompt: string): string {
+  return [
+    "本轮任务边界：",
+    "- k8sops 只用于运维 Kubernetes 集群；除非用户明确说是在排查本机/k8sops/Codex 运行环境，否则所有问题都默认针对当前 kubeconfig 指向的 Kubernetes 集群。",
+    "- 判断服务、应用、实例、Pod、Deployment、Service、节点、端口或健康状态时，必须使用 kubectl 查询集群资源和事件/日志，不能用本机 systemctl/service/ps/launchctl/netstat/lsof 来代替。",
+    "- 当前工作区已有 ./.kube/config，并且 PATH 中的 kubectl wrapper 会自动使用它；不要读取 ~/.kube/config。",
+    "",
+    "用户问题：",
+    prompt
+  ].join("\n");
 }
 
 function normalizeCodexError(error: unknown): string {
